@@ -6,6 +6,11 @@ This software uses OSHash to:
 - scan a directory for matches to that set of files and symlink them per the list
 - handle additional files added later that aren't symlinks but that are on the list
 
+Because we use the oshash module, please install with either:
+pip3 install oshash
+or
+pip3 install -r requirements.txt
+
 Usage:
 
 `python3 makelist.py`
