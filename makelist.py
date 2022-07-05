@@ -16,6 +16,8 @@ with open(os.path.join(newdir,'list.csv'), 'w', newline='') as csvfile:
     for root, dirs, files in os.walk(scandir, topdown = True):
       for name in files:
         fullpath = os.path.join(root, name)
+        if (os.path.getsize(fullpath) < 132000):
+           continue
         extension = os.path.splitext(fullpath)
         thehash = oshash.oshash(fullpath) + extension[1]
         newsymlink = os.path.join(newdir, thehash)
